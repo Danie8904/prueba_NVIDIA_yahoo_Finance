@@ -1,23 +1,35 @@
-name: Daily NVIDIA Forecast
+name: Ejecutar predicción diaria
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'  # 8:00 AM UTC
+    - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC (~7:00am Colombia)
+  workflow_dispatch:     # Para ejecutarlo manualmente desde GitHub
 
 jobs:
-  forecast:
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run forecast
-        run: |
-          mkdir -p forecasts
-          python daily_forecast.py
+    - name: 📥 Clonar repositorio
+      uses: actions/checkout@v3
+
+    - name: 🐍 Instalar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 📦 Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install yfinance pandas numpy scikit-learn matplotlib
+
+    - name: 🔮 Ejecutar script
+      run: python daily_forecast.py
+
+    - name: 📤 Subir resultados al repositorio
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "actions@github.com"
+        git add forecasts/
+        git commit -m "Resultados automáticos - $(date +'%Y-%m-%d')" || echo "No hay cambios"
+        git push
