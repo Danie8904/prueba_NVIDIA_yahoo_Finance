@@ -1,9 +1,9 @@
 name: Daily NVIDIA Forecast
 
-on:
+on:  # ← ¡Esta sección es obligatoria!
+  workflow_dispatch:  # Permite ejecución manual
   schedule:
-    - cron: '0 8 * * *'  # Ejecuta a las 8:00 AM UTC
-  workflow_dispatch:      # Permite ejecución manual
+    - cron: '0 8 * * *'  # Ejecución automática diaria a las 8:00 AM UTC
 
 jobs:
   forecast:
@@ -23,4 +23,6 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run forecast
-      run: python daily_forecast.py
+      run: |
+        mkdir -p forecasts
+        python daily_forecast.py
