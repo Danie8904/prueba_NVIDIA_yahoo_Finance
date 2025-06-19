@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/947156766554267081/8374467c88d64fee9c62fe6ee9ee6765/artifacts
+end_time: 1750365739113
+entry_point_name: ''
+experiment_id: '947156766554267081'
+lifecycle_stage: active
+run_id: 8374467c88d64fee9c62fe6ee9ee6765
+run_name: traveling-zebra-368
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750365728780
+status: 4
+tags: []
+user_id: lenovo

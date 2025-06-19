@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/947156766554267081/4a45c834168b479dba91133d8c217aad/artifacts
+end_time: 1750366284139
+entry_point_name: ''
+experiment_id: '947156766554267081'
+lifecycle_stage: active
+run_id: 4a45c834168b479dba91133d8c217aad
+run_name: entertaining-kit-217
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750366261480
+status: 4
+tags: []
+user_id: lenovo

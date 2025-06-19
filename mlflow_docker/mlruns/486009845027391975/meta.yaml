@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/486009845027391975
+creation_time: 1750365227853
+experiment_id: '486009845027391975'
+last_update_time: 1750365227853
+lifecycle_stage: active
+name: NVDA_Stock_Forecast

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/lenovo/desktop/Finaipro/nvidia_forecast/mlruns/0/43ff308e404f4a029ffbbb9d745bc522/artifacts
+end_time: 1750361278433
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 43ff308e404f4a029ffbbb9d745bc522
+run_name: unruly-crab-752
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750361241527
+status: 3
+tags: []
+user_id: lenovo

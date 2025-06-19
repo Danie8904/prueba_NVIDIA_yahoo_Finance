@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/486009845027391975/7f15f0a8e796451a9c067d159cdaa022/artifacts
+end_time: 1750365240987
+entry_point_name: ''
+experiment_id: '486009845027391975'
+lifecycle_stage: active
+run_id: 7f15f0a8e796451a9c067d159cdaa022
+run_name: stylish-midge-800
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750365230360
+status: 3
+tags: []
+user_id: lenovo

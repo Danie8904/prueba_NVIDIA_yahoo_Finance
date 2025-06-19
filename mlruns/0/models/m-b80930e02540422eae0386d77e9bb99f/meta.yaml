@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/lenovo/desktop/Finaipro/nvidia_forecast/mlruns/0/models/m-b80930e02540422eae0386d77e9bb99f/artifacts
+creation_timestamp: 1750361244150
+experiment_id: '0'
+last_updated_timestamp: 1750361278299
+model_id: m-b80930e02540422eae0386d77e9bb99f
+model_type: null
+name: modelo_random_forest
+source_run_id: 43ff308e404f4a029ffbbb9d745bc522
+status: 2
+status_message: null

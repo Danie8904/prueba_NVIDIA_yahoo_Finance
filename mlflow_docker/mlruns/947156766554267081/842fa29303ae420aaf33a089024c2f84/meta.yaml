@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/947156766554267081/842fa29303ae420aaf33a089024c2f84/artifacts
+end_time: 1750366526869
+entry_point_name: ''
+experiment_id: '947156766554267081'
+lifecycle_stage: active
+run_id: 842fa29303ae420aaf33a089024c2f84
+run_name: selective-ape-482
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750366424716
+status: 3
+tags: []
+user_id: lenovo
