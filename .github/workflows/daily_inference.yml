@@ -1,27 +1,23 @@
 name: Daily NVIDIA Forecast
 
 on:
-  workflow_dispatch:    # Permite ejecución manual
-  schedule:             # Ejecución programada
-    - cron: '0 8 * * *' # 8:00 AM UTC cada día
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *'  # 8:00 AM UTC
 
 jobs:
   forecast:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.9"
-    
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-    
-    - name: Run forecast
-      run: |
-        mkdir -p forecasts
-        python daily_forecast.py
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run forecast
+        run: |
+          mkdir -p forecasts
+          python daily_forecast.py
