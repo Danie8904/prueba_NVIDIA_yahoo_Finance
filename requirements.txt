@@ -1,3 +1,4 @@
-pandas
 yfinance
-prophet
+pandas
+numpy
+scikit-learn
