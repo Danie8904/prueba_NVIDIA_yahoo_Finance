@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/947156766554267081/ba25abed972843ab9027c0b171a9f9f7/artifacts
+end_time: 1750426471440
+entry_point_name: ''
+experiment_id: '947156766554267081'
+lifecycle_stage: active
+run_id: ba25abed972843ab9027c0b171a9f9f7
+run_name: peaceful-bear-990
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750426279983
+status: 3
+tags: []
+user_id: lenovo
