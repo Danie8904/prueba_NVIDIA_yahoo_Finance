@@ -9,14 +9,14 @@ from datetime import datetime, timedelta
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-# Yahoo Finance - Pronosticos a 30 dias
+# Yahoo Finance - Pronosticos 
 TICKER = "NVDA"
 YEARS_OF_DATA = 10
 FORECAST_DAYS = 30
 TEST_DAYS = 30
 
-# Errores
 def calculate_metrics(y_true, y_pred):
+    """Calcula métricas de evaluación"""
     y_true = np.array(y_true).flatten()
     y_pred = np.array(y_pred).flatten()
     mae = mean_absolute_error(y_true, y_pred)
@@ -28,8 +28,8 @@ def calculate_metrics(y_true, y_pred):
         'MAPE_percent': round(np.mean(np.abs((y_true - y_pred) / y_true)) * 100, 4)
     }
 
-# Descarga datos historicos del ticker
 def download_stock_data():
+    """Descarga datos históricos del ticker"""
     end_date = datetime.now()
     start_date = end_date - timedelta(days=365 * YEARS_OF_DATA)
     with warnings.catch_warnings():
@@ -43,9 +43,9 @@ def download_stock_data():
         )
     return data[['Close']].dropna()
 
-# Modelo Random Forest
 def create_features(df):
-       df = df.copy()
+    """Genera variables predictoras"""
+    df = df.copy()
     df['Date'] = df.index
     df['Day'] = df['Date'].dt.day.astype(int)
     df['Month'] = df['Date'].dt.month.astype(int)
@@ -70,13 +70,13 @@ def split_data(df):
 if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
 
-    # Configuracion de MLflow dentro del main
+    # Configuración de MLflow dentro del main
     mlflow.set_tracking_uri("http://localhost:5000")
     mlflow.set_experiment("NVDA_Forecast")
 
     with mlflow.start_run():
         try:
-            print("Descarga de datos...")
+            print("Descargando datos...")
             data = download_stock_data()
 
             print("Generando características...")
@@ -85,11 +85,11 @@ if __name__ == "__main__":
             print("Dividiendo datos...")
             X_train, y_train, X_test, y_test, test_dates = split_data(df)
 
-            print("Entreno del modelo...")
+            print("Entrenando modelo...")
             model = RandomForestRegressor(n_estimators=100, max_depth=10, random_state=42)
             model.fit(X_train, y_train)
 
-            print("Generación de  predicciones...")
+            print("Generando predicciones...")
             y_pred = model.predict(X_test)
             metrics = calculate_metrics(y_test, y_pred)
 
