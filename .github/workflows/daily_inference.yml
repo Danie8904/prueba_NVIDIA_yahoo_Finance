@@ -3,7 +3,7 @@ name: Ejecutar predicción diaria
 on:
   schedule:
     - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC (~7:00am Colombia)
-  workflow_dispatch:     # También se puede ejecutar manualmente
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,10 +21,11 @@ jobs:
     - name: 📦 Instalar dependencias
       run: |
         python -m pip install --upgrade pip
-        pip install yfinance pandas numpy scikit-learn matplotlib
+        pip install yfinance pandas numpy scikit-learn matplotlib mlflow
 
     - name: 🔮 Ejecutar script
-      run: python daily_forecast.py
+      run: |
+        python daily_forecast.py || { echo "❌ Error al ejecutar el script"; exit 1; }
 
     - name: 📤 Subir resultados al repositorio
       run: |
