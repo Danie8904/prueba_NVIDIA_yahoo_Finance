@@ -71,7 +71,7 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=FutureWarning)
 
     # Configuración de MLflow dentro del main
-    mlflow.set_tracking_uri("http://localhost:5000")
+    #mlflow.set_tracking_uri("http://localhost:5000")
     mlflow.set_experiment("NVDA_Forecast")
 
     with mlflow.start_run():
